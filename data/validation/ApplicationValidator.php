@@ -11,11 +11,11 @@ class ApplicationValidator
         if (($length < 2)) {
             $this->validationErrors['reason'] = 'Write something more';
         }
-        if ($app->date_to  < $app->date_from) {
+        if ($app->days  === 0) {
             $this->validationErrors['duration'] = 'Make sure that Date To is later than Date From';
         }
 
-    
+
         return empty($this->validationErrors);
     }
 
@@ -24,8 +24,3 @@ class ApplicationValidator
         return $this->validationErrors;
     }
 }
-
-
-
-
-

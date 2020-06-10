@@ -170,7 +170,6 @@ label {
 #wfa {
   text-align: center;
   min-width: -webkit-fill-available;
-  width: 100%;
 }
 #applicationslist {
   word-wrap: break-word;
@@ -252,8 +251,13 @@ ol.gradient-list > li + li {
 .validationErrors {
   background-color: #FF9C99 ;
   color: #AB3835;
+  font-size: 15px;
   padding: 5px;
   font-weight: 800;
   width: 100%;
+  text-align: center;
+}
+.validationErrors p {
+  font-size: 13px;
   text-align: center;
 }

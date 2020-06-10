@@ -1,6 +1,7 @@
-<?php 
+<?php
 
- class User {
+class User
+{
     public $user_id;
     public $username;
     public $lastname;

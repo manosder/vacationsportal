@@ -1,62 +1,77 @@
 <?php
 
-include_once($appBasePath.'/services/application.php');
-include_once($appBasePath.'/services/user.php');
+include_once($appBasePath . '/services/application.php');
+include_once($appBasePath . '/services/user.php');
 
-function showLogin() 
+function renderView($viewFile)
 {
     global $appBasePath;
-    include_once($appBasePath.'/views/login.php');
+
+    $viewFilePath = $appBasePath . '/views/' . $viewFile . '.php';
+    if (!file_exists($viewFilePath)) {
+        throw new \Exception('File does not exist');
+    }
+
+    include_once($viewFilePath);
 }
-function showSignUp() 
+
+function showLogin()
 {
-    global $appBasePath;
-    include_once($appBasePath.'/views/signup.php');
+    renderView('login');
 }
-function showIndex() 
+
+function showSignUp()
 {
-    if(user_is_admin()) {
+    renderView('signup');
+}
+
+function showIndex()
+{
+    if (user_is_admin()) {
         header("Location: users");
     } else {
         header("Location: applications");
     }
 }
-function showApplications() 
+
+function showApplications()
 {
     $applications = ApplicationService::getAllApplicationsForLoggedInUser();
     global $appBasePath;
-    include_once($appBasePath.'/views/applications_table.php');
+    include_once($appBasePath . '/views/applications_table.php');
 }
+
 function showCreateApplication()
 {
-    global $appBasePath;
-    include_once($appBasePath.'/views/create_application.php');
+    renderView('create_application');
 }
-function showMessages() 
+
+function showMessages()
 {
     global $appBasePath;
 
-    if(user_is_admin()) {
+    if (user_is_admin()) {
         $messages = ApplicationService::getAllPendingMessages();
     } else {
         $messages = ApplicationService::getAllApplicationsForLoggedInUser();
     }
 
-    include_once($appBasePath.'/views/messages.php');
+    include_once($appBasePath . '/views/messages.php');
 }
-function showUsers() 
+
+function showUsers()
 {
     $userlist = UserService::getAll();
     global $appBasePath;
-    include_once($appBasePath.'/views/users_table.php');
+    include_once($appBasePath . '/views/users_table.php');
 }
-function showCreateUser() 
+
+function showCreateUser()
 {
-    global $appBasePath;
-    include_once($appBasePath.'/views/create_user.php');
+    renderView('create_user');
 }
-function showUpdateUser() 
+
+function showUpdateUser()
 {
-    global $appBasePath;
-    include_once($appBasePath.'/views/update_user.php');
+    renderView('update_user');
 }

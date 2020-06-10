@@ -1,6 +1,7 @@
-<?php 
+<?php
 
-class Application {
+class Application
+{
 
     public $user_id;
     public $date_from;
@@ -12,7 +13,7 @@ class Application {
     public $date_submitted;
     public $status;
 
-    static public function fromDbOject ($dbObject)
+    static public function fromDbOject($dbObject)
     {
         $app = new Application();
         $app->id   = $dbObject['id'];
