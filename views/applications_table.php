@@ -10,10 +10,11 @@ include_once($appBasePath . '/parts/head.php');
     <div class="jumbotron d-flex justify-content-center">
         <h3>Your Vacation Requests</h3>
     </div>
-    <div class="container container_app_table">
-        <div class="d-flex justify-content-center">
-            <a href="create_application">Submit Request </a>
+    <div class="d-flex justify-content-center">
+            <a href="create_application">Submit New Request </a>
         </div>
+    <div class="container container_app_table">
+
         <hr>
         <ol class="gradient-list">
             <?php

@@ -16,7 +16,7 @@ include_once($appBasePath . '/parts/head.php');
             <label for="username">First Name:</label>
             <input type="text" name="username" value="<?= $_GET['username'] ?>">
             <?php if (!empty($_SESSION['validationErrors']['username'])) : ?>
-                <div class="validationErrors">
+                <div class="alert alert-danger validationErrors">
                     <?= $_SESSION['validationErrors']['username']; ?>
                 </div>
             <?php endif; ?>
@@ -24,7 +24,7 @@ include_once($appBasePath . '/parts/head.php');
             <label for="lastname">Last Name:</label>
             <input type="text" name="lastname" value="<?= $_GET['lastname'] ?>">
             <?php if (!empty($_SESSION['validationErrors']['lastname'])) : ?>
-                <div class="validationErrors">
+                <div class="alert alert-danger validationErrors">
                     <?= $_SESSION['validationErrors']['lastname'] ?>
                 </div>
             <?php endif; ?>
@@ -32,22 +32,22 @@ include_once($appBasePath . '/parts/head.php');
             <label for="email">Email:</label>
             <input type="email" name="email" value="<?= $_GET['email'] ?>">
             <?php if (!empty($_SESSION['validationErrors']['email'])) : ?>
-                <div class="validationErrors">
+                <div class="alert alert-danger validationErrors">
                     <p><?= $_SESSION['validationErrors']['email'] ?></p>
                 </div>
             <?php endif; ?>
 
             <input type="password" name="password" placeholder="enter new password..">
             <?php if (!empty($_SESSION['validationErrors']['password'])) : ?>
-                <div class="validationErrors">
-                    <p><?= $_SESSION['validationErrors']['password'] ?></p>
+                <div class="alert alert-danger validationErrors">
+                    <?= $_SESSION['validationErrors']['password'] ?>
                 </div>
             <?php endif; ?>
 
             <input type="password" name="password2" placeholder="enter password again">
             <?php if (!empty($_SESSION['validationErrors']['password2'])) : ?>
-                <div class="validationErrors">
-                    <p><?= $_SESSION['validationErrors']['password2'] ?></p>
+                <div class="alert alert-danger validationErrors">
+                    <?= $_SESSION['validationErrors']['password2'] ?>
                 </div>
             <?php endif; ?>
 

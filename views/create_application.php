@@ -17,16 +17,16 @@ include_once($appBasePath . '/parts/head.php');
             <label for="dateto" style="text-decoration:underline;">End Date:</label>
             <input type="date" name="dateto" value="<?= $_SESSION['vacationRequest']['dateto'] ?>">
             <?php if (!empty($_SESSION['validationErrors']['duration'])) : ?>
-                <div class="validationErrors">
-                    <p><?= $_SESSION['validationErrors']['duration'] ?></p>
+                <div class="alert alert-danger validationErrors">
+                    <?= $_SESSION['validationErrors']['duration'] ?>
                 </div><br>
             <?php endif; ?>
 
             <label for="reason" style="text-decoration:underline;">Reason:</label>
             <textarea id="reason" name="reason"><?= $_SESSION['vacationRequest']['reason'] ?></textarea>
             <?php if (!empty($_SESSION['validationErrors']['reason'])) : ?>
-                <div class="validationErrors">
-                    <p><?= $_SESSION['validationErrors']['reason'] ?></p>
+                <div class="alert alert-danger validationErrors">
+                    <?= $_SESSION['validationErrors']['reason'] ?>
                 </div><br>
             <?php endif; ?>
 

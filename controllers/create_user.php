@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (!$userValidator->validate($user)) {
         $_SESSION['validationErrors'] = $userValidator->getErrors();
 
-        header('Location: create_user.php?error_message=$errors');
+        header('Location: create_user.php');
         die();
     }
 

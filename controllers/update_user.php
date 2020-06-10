@@ -9,6 +9,7 @@ if (!user_is_admin()) {
     echo 'No permission to update a user';
     die;
 }
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     include_once($appBasePath . '/data/models/User.php');
     $user = new User();

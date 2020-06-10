@@ -9,7 +9,7 @@ include_once($appBasePath . '/parts/head.php');
     <div id="login-box" class="d-flex justify-content-center align-items-center">
         <form method="post">
             <h4 id="wfa">Welcome </span></h4>
-            <p> Log in to your account to do amazing things</p>
+            <p> Log in to your account below to book your vacation</p>
             <div class="user-box">
                 <input type="text" name="email" placeholder="Enter email">
             </div>
@@ -18,7 +18,7 @@ include_once($appBasePath . '/parts/head.php');
             </div>
             <input class="button button1" type="submit" value="Login">
             <div class="wrap">
-                <a class="link" href="signup.php">Sign Up </a>
+                <a class="link" href="signup.php">Register </a>
             </div>
         </form>
     </div>
